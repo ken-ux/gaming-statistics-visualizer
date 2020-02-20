@@ -27,7 +27,7 @@ We hope to answer these types of questions:
 
 1. How has the diversity of game genres changed over time?
     - This question can be answered by looking at the amount of game genres that are present in current years versus older ones.
-2. What game genres are most/least popular with certain age groups? (_Other demographic factors can include country, race, etc._)
+2. What game genres are most/least popular with certain age groups or over time? (_Other demographic factors can include country, race, etc._)
     - This question can be answered by comparing the relative popularity of game genres with defined age groups.
 3. How has use of certain gaming platforms evolved over time? (_As a follow-up, has the advent of mobile devices and gaming systems affected popular use of those platforms?_)
     - This question can be answered through the most used gaming platforms for the most popular games.
