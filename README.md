@@ -34,7 +34,27 @@ We hope to answer these types of questions:
 # Part 2: Finding Data
 Kenny
 ---
+For: _data/games-features.csv_
 
+- **Where did you download the data (e.g., a web URL)?**
+
+https://data.world/craigkelly/steam-game-data
+
+- **How was the data collected or generated? Make sure to explain who collected the data (not necessarily the same people that host the data), and who or what the data is about?**
+
+The data was collected through publicly available Steam API's and steamspy.com, a website that also uses Steam API to note sales of game titles.
+
+- **How many observations (rows) are in your data?**
+
+13,357.
+
+- **How many features (columns) are in the data?**
+
+78.
+
+- **What questions (from above) can be answered using the data in this dataset?**
+
+The dataset can help answer the first and third questions about game genres changing over time and the rise of certain platforms for gaming. These are most readily answered by the release date and platform columns.
 
 Peter
 ---
