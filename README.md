@@ -11,7 +11,7 @@ The domain we're interested in is gaming.
 
 - Why are you interested in this field/domain?
 
-We are interested in gaming as a domain because our group likes to play different types of video/mobile games and would like to know more statistics about user statistics such as play time, types of games played, etc.
+We are interested in gaming as a domain because it explores a realm of technology that is becomingly increasingly popular and more complex with the advancement of gaming platforms, companies, and technological innovations (VR, mobile, etc.)
 
 - What other examples of data driven project have you found related to this domain (share at least 3)?
 
