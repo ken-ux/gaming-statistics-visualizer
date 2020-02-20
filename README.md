@@ -61,7 +61,27 @@ The dataset can help answer the first and third questions about game genres chan
 
 Peter
 ---
+For: _data/vgsales-12-4-19_
 
+- **Where did you download the data (e.g., a web URL)?**
+
+https://www.kaggle.com/ashaheedq/video-games-sales-2019
+
+- **How was the data collected or generated? Make sure to explain who collected the data (not necessarily the same people that host the data), and who or what the data is about?**
+
+The data was generated through a scrape of vgchartz.com.
+
+- **How many observations (rows) are in your data?**
+
+37,102.
+
+- **How many features (columns) are in the data?**
+
+16.
+
+- **What questions (from above) can be answered using the data in this dataset?**
+
+This data set can help answer questions regarding change in genre popularity over time, and perhaps may help answer questions regarding popularity of different platforms for gaming. These questions are answered through the genre, year, platform, and global_sales columns
 
 Ryan
 ---
