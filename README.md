@@ -19,7 +19,7 @@ We are interested in gaming as a domain because it explores a realm of technolog
 
 2. [Predicting video game hits with Machine Learning](https://towardsdatascience.com/predicting-hit-video-games-with-ml-1341bd9b86b0) by Ignacio Chavarria is an article about how extrapolated data from popular video games—denoted by their unit sales—such as their genre or platform can be used to predict games in development that may become a "hit".
 
-3. [Improving video game project scope decisions with data: An analysis of achievements and game completion rates](https://www.sciencedirect.com/science/article/abs/pii/S1875952118300181) by EricBailey and Kazunori Miyata is a research article which takes open-source data from Steam, a digital distributor of games, and finds factors such as ratings or price that correlate with users who actually complete their game by unlocking all achievements.
+3. [Improving video game project scope decisions with data: An analysis of achievements and game completion rates](https://www.sciencedirect.com/science/article/abs/pii/S1875952118300181) by Eric Bailey and Kazunori Miyata is a research article which takes open-source data from Steam, a digital distributor of games, and finds factors such as ratings or price that correlate with users who actually complete their game by unlocking all achievements.
 
 - **What data-driven questions do you hope to answer about this domain (share at least 3)?**
 
