@@ -87,3 +87,24 @@ This data set can help answer questions regarding change in genre popularity ove
 
 Ryan
 ---
+For: _data/game_info.csv_
+
+- **Where did you download the data (e.g., a web URL)?**
+
+https://www.kaggle.com/jummyegg/rawg-game-dataset/data
+
+- **How was the data collected or generated? Make sure to explain who collected the data (not necessarily the same people that host the data), and who or what the data is about?**
+
+The data was collected from RAWG API and is a game database for discovering new games on over 50 platforms.
+
+- **How many observations (rows) are in your data?**
+
+345,667.
+
+- **How many features (columns) are in the data?**
+
+27.
+
+- **What questions (from above) can be answered using the data in this dataset?**
+
+This data set can help provide insight for the diversification of games over time, especially over multiple platforms, and relative popularity of games/genres. An analysis of the genre, platforms, and added_status_owned columns can answer the questions.
