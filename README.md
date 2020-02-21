@@ -4,8 +4,6 @@ Authors: Kenny Nguyen, Peter Miyoshi, Ryan McGhee
 
 Assignment: Project Brainstorm
 
-Use this `REAMDE.md` file to describe your final project (as detailed on Canvas).
-
 # Part 1: Domain of Interest
 The domain we're interested in is **gaming, particularly video games**.
 
@@ -37,7 +35,8 @@ We hope to answer these types of questions:
     - This question can be answered by demographic data which shows the frequency of women versus men who play games.
 
 # Part 2: Finding Data
-Kenny
+
+Dataset 1
 ---
 For: _data/games-features.csv_
 
@@ -61,7 +60,7 @@ The data was collected through publicly available Steam API's and steamspy.com, 
 
 The dataset can help answer the first and third questions about game genres changing over time and the rise of certain platforms for gaming. These are most readily answered by the release date and platform columns.
 
-Peter
+Dataset 2
 ---
 For: _data/vgsales-12-4-19_
 
@@ -85,7 +84,7 @@ The data was generated through a scrape of vgchartz.com.
 
 This data set can help answer questions regarding change in genre popularity over time, and perhaps may help answer questions regarding popularity of different platforms for gaming. These questions are answered through the genre, year, platform, and global_sales columns
 
-Ryan
+Dataset 3
 ---
 For: _data/game_info.csv_
 
