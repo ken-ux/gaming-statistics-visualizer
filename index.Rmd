@@ -9,22 +9,15 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
+## Domain/Data
+Write an introductory paragraph explaining the domain/data set (feel free to borrow from the brainstorm part of the assignment)
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+We are interested in gaming as a domain because it explores a realm of technology that has gained traction and popularity over time, producing complex and interesting advancements in elements such as gaming platforms, companies, and technological innovations (VR, mobile, etc.) Our group has played different video games throughout our lives and it would be interesting to see how our perspective of its evolution parallels trends we uncover. Our datasets, sourced  [here](https://www.kaggle.com/jummyegg/rawg-game-dataset/data) and [here](https://www.kaggle.com/ashaheedq/video-games-sales-2019) from Kaggle, contains information such as achievements, genre, Metacritic ratings, and sales for thousands of titles.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+Write a summary paragraph that includes information calculated by your summary information function
 
-```{r cars}
-summary(cars)
-```
 
-## Including Plots
+Render your table and describe pertinent observations found in it
 
-You can also embed plots, for example:
 
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+Describe the purpose of each chart (e.g., "this chart was intended to show the relationship between..."), render each chart, and describe pertinent observations found in each chart
