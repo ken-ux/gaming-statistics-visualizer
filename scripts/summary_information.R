@@ -11,3 +11,9 @@ get_summary_info <- function(dataset) {
   # do some more interesting stuff
   return (ret)
 }
+
+# The steps below are what is necessary to merge both datasets.
+df1 <- read.csv("data/vgsales-12-4-2019.csv", head = T)
+df2 <- read.csv("data/game_info.csv", head = T)
+colnames(df2)[colnames(df2) == 'name'] <- 'Name'
+df3 <- merge(df1,df2,by=c('Name'),all.x=T)
