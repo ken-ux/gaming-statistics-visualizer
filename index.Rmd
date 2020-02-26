@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Domain/Data
 Write an introductory paragraph explaining the domain/data set (feel free to borrow from the brainstorm part of the assignment)
 
-We are interested in gaming as a domain because it explores a realm of technology that has gained traction and popularity over time, producing complex and interesting advancements in elements such as gaming platforms, companies, and technological innovations (VR, mobile, etc.) Our group has played different video games throughout our lives and it would be interesting to see how our perspective of its evolution parallels trends we uncover. Our datasets, sourced  [here](https://www.kaggle.com/jummyegg/rawg-game-dataset/data) and [here](https://www.kaggle.com/ashaheedq/video-games-sales-2019) from Kaggle, contains information such as achievements, genre, Metacritic ratings, and sales for thousands of titles.
+We are interested in gaming as a domain because it explores a realm of technology that has gained traction and popularity over time, producing complex and interesting advancements in elements such as gaming platforms, companies, and technological innovations (VR, mobile, etc.) Our group has played different video games throughout our lives and it would be interesting to see how our perspective of its evolution parallels trends we uncover. Our datasets, sourced  [here](https://www.kaggle.com/jummyegg/rawg-game-dataset/data) from Trung Hoang and [here](https://www.kaggle.com/ashaheedq/video-games-sales-2019) from Abdulshaheed Alqunber, both through Kaggle, contains information about many games both old and recent.
 
 Write a summary paragraph that includes information calculated by your summary information function
 
