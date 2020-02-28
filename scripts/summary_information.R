@@ -4,10 +4,11 @@ library("stringr")
 get_summary_info <- function(dataset) {
   ret <- list()
   ret$game_titles <- nrow(dataset) # Number of game titles
-  ret$oldest_date <- df3 %>% # Oldest date of game recorded in dataset
+  ret$oldest_date <- dataset %>% # Oldest date of game recorded in dataset
     mutate(date = substr(released, 1, 4)) %>%
-    summarize(min = min()) %>%
-    pull()
+    na.omit() %>%
+    filter(date == min(date)) %>%
+    pull(date)
   ret$genres <- dataset %>% # Number of unique genres
     group_by(Genre) %>%
     summarize(count = n()) %>%
@@ -33,4 +34,4 @@ get_summary_info <- function(dataset) {
 df1 <- read.csv("data/vgsales-12-4-2019.csv", head = T)
 df2 <- read.csv("data/game_info.csv", head = T)
 colnames(df2)[colnames(df2) == 'name'] <- 'Name'
-df3 <- merge(df1,df2,by=c('Name'),all.x=T)
+df3 <- merge(df1,df2,by=c('Name'),all.x=T, stringsAsFactors = FALSE)
