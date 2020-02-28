@@ -6,26 +6,23 @@ get_summary_info <- function(dataset) {
   ret$game_titles <- nrow(dataset) # Number of game titles
   ret$oldest_date <- df3 %>% # Oldest date of game recorded in dataset
     mutate(date = substr(released, 1, 4)) %>%
-    desc() %>%
-    select(date) %>%
-    na.omit() %>%
-    top_n(1)
-  ret$genres <- df3 %>% # Number of unique genres
+    summarize(min = min()) %>%
+    pull()
+  ret$genres <- dataset %>% # Number of unique genres
     group_by(Genre) %>%
     summarize(count = n()) %>%
     pull(Genre)
-  ret$platforms <- df3 %>% # Number of unique platforms
+  ret$platforms <- dataset %>% # Number of unique platforms
     group_by(Platform) %>%
     summarize(count = n()) %>%
     pull(Platform)
-  ret$publishers <- df3 %>% # Number of unique publishers
+  ret$publishers <- dataset %>% # Number of unique publishers
     group_by(Publisher) %>%
     summarize(count = n()) %>%
     pull(Publisher)
-  ret$sales <- df3 %>% # Total global sales of games
+  ret$sales <- dataset %>% # Total global sales of games
     select(Global_Sales) %>%
     na.omit() %>%
-    group_by(Global_Sales) %>%
     summarize(total_sales = sum()) %>%
     pull(total_sales)
   # do some more interesting stuff
