@@ -1,7 +1,8 @@
+# Necessary libraries
 library("dplyr")
 library("stringr")
+
 # A function that takes in a dataset and returns a list of info about it:
-dataset <- df3
 get_summary_info <- function(dataset) {
   ret <- list()
   ret$game_titles <- nrow(dataset) # Number of game titles
@@ -31,10 +32,11 @@ get_summary_info <- function(dataset) {
     summarize(count = n()) %>%
     pull(Publisher) %>% # You can end here to get individual publishers
     length()
-  ret$sales <- paste(sum(na.omit(dataset$Global_Sales)), "million") # Total global sales of games
-  # do some more interesting stuff
+  # Total global sales of games
+  ret$sales <- paste(round(sum(na.omit(dataset$Global_Sales)) / 1000, digits = 2), "billion")
   return (ret)
 }
+
 
 # The steps below are what is necessary to merge both datasets.
 df1 <- read.csv("data/vgsales-12-4-2019.csv", head = T)
