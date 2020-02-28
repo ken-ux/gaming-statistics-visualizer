@@ -1,5 +1,5 @@
 ---
-title: "index"
+title: "Gaming Info"
 author: "Kenny Nguyen, Peter Miyoshi, Ryan McGhee"
 date: "2/24/2020"
 output: html_document
@@ -7,16 +7,25 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library("dplyr")
+library("stringr")
 ```
 
 ## Domain/Data
-Write an introductory paragraph explaining the domain/data set (feel free to borrow from the brainstorm part of the assignment)
 
-We are interested in gaming as a domain because it explores a realm of technology that has gained traction and popularity over time, producing complex and interesting advancements in elements such as gaming platforms, companies, and technological innovations (VR, mobile, etc.) Our group has played different video games throughout our lives and it would be interesting to see how our perspective of its evolution parallels trends we uncover. Our datasets, sourced  [here](https://www.kaggle.com/jummyegg/rawg-game-dataset/data) from Trung Hoang and [here](https://www.kaggle.com/ashaheedq/video-games-sales-2019) from Abdulshaheed Alqunber, both through Kaggle, contains information about many games both old and recent.
-
-Write a summary paragraph that includes information calculated by your summary information function
+We are interested in gaming as a domain because it explores a realm of technology that has gained traction and popularity over time, producing complex and interesting advancements in elements such as gaming platforms, companies, and technological innovations (VR, mobile, etc.) Our group has played different video games throughout our lives and it would be interesting to see how our perspective of its evolution parallels trends we uncover. Our merged dataset, sourced  [here](https://www.kaggle.com/jummyegg/rawg-game-dataset/data) from Trung Hoang and [here](https://www.kaggle.com/ashaheedq/video-games-sales-2019) from Abdulshaheed Alqunber contains information about many games both old and recent! Both authors published their data through Kaggle.
 
 
+## Summary Paragraph
+```{r summary_info, include=FALSE, echo=FALSE}
+source("scripts/summary_information.R")
+summary_data <- read.csv("data/merged_game_data.csv", stringsAsFactors = FALSE)
+list <- get_summary_info(summary_data)
+```
+
+Merging together Hoang and Alqunber's data, we have information from **`r list$game_titles`** game titles. The earliest release date of a game in this dataset goes all the way back to **`r list$oldest_date`**. In addition, of those game titles there are **`r list$genres`** unique genre or genre combinations and **`r list$platforms`** platforms that these games have been played on! And of those platforms, the following are the top 3 with the most games made for it: **`r list$top_three_platforms`**. In total, the games from this set also brought in **`r list$sales`** sales globally!
+
+## Summary Table
 Render your table and describe pertinent observations found in it
 
 
