@@ -29,4 +29,13 @@ Merging together Hoang and Alqunber's data, we have information from **`r list$g
 Render your table and describe pertinent observations found in it
 
 
+## Chart 1: Kenny
+Describe the purpose of each chart (e.g., "this chart was intended to show the relationship between..."), render each chart, and describe pertinent observations found in each chart
+
+
+## Chart 2: Peter
+Describe the purpose of each chart (e.g., "this chart was intended to show the relationship between..."), render each chart, and describe pertinent observations found in each chart
+
+
+## Chart 3: Ryan
 Describe the purpose of each chart (e.g., "this chart was intended to show the relationship between..."), render each chart, and describe pertinent observations found in each chart
