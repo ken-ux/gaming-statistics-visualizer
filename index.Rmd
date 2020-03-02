@@ -33,7 +33,7 @@ This chart was intended to show the relationship between **playtime** (the hours
 
 ```{r first_chart, message=FALSE, warning=FALSE, echo=FALSE}
 source("scripts/first_chart.R")
-first_chart
+get_first_chart(summary_data)
 ```
 
 A scatter plot was used because:
