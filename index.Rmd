@@ -29,7 +29,19 @@ Render your table and describe pertinent observations found in it
 
 
 ## Chart 1: Kenny
-Describe the purpose of each chart (e.g., "this chart was intended to show the relationship between..."), render each chart, and describe pertinent observations found in each chart
+This chart was intended to show the relationship between **playtime** (the hours needed to complete a game) and **critic score** to find out whether one's engagement with a game is significant to how those games are rated. For critic score, our merged dataset gives us the choice between using the _critic_score_ values from Alqunber or the _metacritic_ ratings from Hoang. We opted to use _metacritic_ because it shows aggregate review scores on a more nuanced scale (*0-100* compared to *1-10*).
+
+```{r first_chart, message=FALSE, warning=FALSE, echo=FALSE}
+source("scripts/first_chart.R")
+first_chart
+```
+
+A scatter plot was used because:
+
+- Playtime and metacritic score are continuous values which can have large amounts of variability.
+- A non-linear regression could be plotted on top of points to show the general relationship between playtime vs. critic score.
+
+The axes were also adjusted to remove outliers such as individual games with long playtime or trend lines with wide confidence intervals. In this chart, we can see that **higher metacritic ratings are correlated with longer playtime**. This may inform developers that adding elements to a game which increases playtime through replayability or bonus content may be worthwhile during game development.
 
 
 ## Chart 2: Peter
