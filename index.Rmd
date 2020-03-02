@@ -25,8 +25,13 @@ list <- get_summary_info(summary_data)
 Merging together Hoang and Alqunber's data, we have information from **`r list$game_titles`** game titles. The earliest release date of a game in this dataset goes all the way back to **`r list$oldest_date`**. In addition, of those game titles there are **`r list$genres`** unique genre or genre combinations and **`r list$platforms`** platforms that these games have been played on! And of those platforms, the following are the top 3 with the most games made for it: **`r list$top_three_platforms`**. In total, the games from this set also brought in **`r list$sales`** sales globally!
 
 ## Summary Table
-Render your table and describe pertinent observations found in it
+Here is a summary of our merged data, grouped by genre and sorted by the total games shipped decending.
+```{r echo=FALSE}
+source("scripts/summary_table.R")
+agregate(summary_data)
+```
 
+The data was grouped in this way in order to help reveal what genres have been most successful over the years, and includes several different columns which could be used as measures of success, as well as a couple of columns we felt may contain interesting differences between the genres. Looking at the chart you can see that Role-Playing and Platform games are quite popular going by how many were shipped; Both being nearly twice the next highest genre. It is also clear from the chart that Average Playtime is unlikely to be an interesting column to investigate further, at least by genre. The averages are too low to show any major differences. Similarly, ratings between genres don't show huge differences between them, although between the lowest and highest there might be enough of a difference to be interesting. Finally, achievements might be an interesting category to look into further, as there is a wide range of different values between the genres. These could be due to outliers skewing the results, or perhaps there is actually a connection between genre and number of achievements.
 
 ## Chart 1: Kenny
 This chart was intended to show the relationship between **playtime** (the hours needed to complete a game) and **critic score** to find out whether one's engagement with a game is significant to how those games are rated. For critic score, our merged dataset gives us the choice between using the _critic_score_ values from Alqunber or the _metacritic_ ratings from Hoang. We opted to use _metacritic_ because it shows aggregate review scores on a more nuanced scale (*0-100* compared to *1-10*).

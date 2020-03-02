@@ -45,4 +45,4 @@ get_summary_info <- function(dataset) {
   return (ret)
 }
 
-lint("scripts/summary_information.R")
+# lint("scripts/summary_information.R")
