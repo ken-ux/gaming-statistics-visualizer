@@ -2,6 +2,13 @@
 library("dplyr")
 library("stringr")
 
+# The steps below are what what necessary to merge both datasets.
+# They have been put into comments to prevent long knitting times.
+## df1 <- read.csv("data/vgsales-12-4-2019.csv", head = T)
+## df2 <- read.csv("data/game_info.csv", head = T)
+## colnames(df2)[colnames(df2) == 'name'] <- 'Name'
+## df3 <- merge(df1,df2,by=c('Name'),all.x=T, stringsAsFactors = FALSE)
+
 # A function that takes in a dataset and returns a list of info about it:
 get_summary_info <- function(dataset) {
   ret <- list()
@@ -33,13 +40,9 @@ get_summary_info <- function(dataset) {
     pull(Publisher) %>% # You can end here to get individual publishers
     length()
   # Total global sales of games
-  ret$sales <- paste(round(sum(na.omit(dataset$Global_Sales)) / 1000, digits = 2), "billion")
+  ret$sales <- paste(round(sum(na.omit(dataset$Global_Sales))
+                           / 1000, digits = 2), "billion")
   return (ret)
 }
 
-
-# The steps below are what what necessary to merge both datasets.
-## df1 <- read.csv("data/vgsales-12-4-2019.csv", head = T)
-## df2 <- read.csv("data/game_info.csv", head = T)
-## colnames(df2)[colnames(df2) == 'name'] <- 'Name'
-## df3 <- merge(df1,df2,by=c('Name'),all.x=T, stringsAsFactors = FALSE)
+lint("scripts/summary_information.R")
