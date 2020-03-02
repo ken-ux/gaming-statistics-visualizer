@@ -2,10 +2,11 @@
 
 library("ggplot2")
 library("dplyr")
-# Remember to include where the critic ratings come from
+
 # The shaded area of the smoothed line is the confidence interval
-game_data <- read.csv("data/merged_game_data.csv", stringsAsFactors = FALSE)
-new_game_data <- game_data %>%
+
+get_first_chart <- function(dataset) {
+new_game_data <- dataset %>%
   select(
     metacritic,
     Playtime = playtime) %>%
@@ -28,3 +29,5 @@ first_chart <- ggplot(data = new_game_data, mapping = aes(x = metacritic, y = Pl
   ) +
   scale_x_continuous(limits = c(40, 100)) +
   scale_y_continuous(limits = c(0, 75))
+  return (first_chart)
+}
