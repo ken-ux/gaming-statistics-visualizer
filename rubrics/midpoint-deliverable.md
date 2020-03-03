@@ -1,4 +1,4 @@
-# Midpoint Deliverable Rubric
+  # Midpoint Deliverable Rubric
 
 This rubric is intended to help guide expectations and increase transparency. However, it is not necessarily fully exhaustive. Make sure to read the detailed explanation on Canvas, and follow the best practices described in the course book and in class.
 
@@ -34,7 +34,7 @@ For each chart, you will be evaluated based on the following (remember, each cha
 - Interprets information from the chart, honing in on important information (**2 points**)
 
 ## Code and Report structure (**7 points**)
-Code is broken up appropriately into the described files. 
+Code is broken up appropriately into the described files.
 - Each file is in the appropriate folder: `scripts/`, except `index.Rmd`, which is in the root (**1 point**)
 - Each file is loaded into the `index.Rmd` file (**1 point**)
 - Only the `index.Rmd` file loads the data (**1 point**)
@@ -48,7 +48,7 @@ Report is professionally formatted, including (but not limtted to):
 
 
 ## Code clarity (**5 points**)
-To earn full points, you must not have any `lintr()` errors. 
+To earn full points, you must not have any `lintr()` errors.
 - -1 point for 1 - 2 `lintr` errors
 - -2 points for 3 - 4 `lintr` errors
 - -3 points for 5 - 6 `lintr` errors

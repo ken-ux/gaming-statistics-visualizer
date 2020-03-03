@@ -44,5 +44,3 @@ get_summary_info <- function(dataset) {
                            / 1000, digits = 2), "billion")
   return (ret)
 }
-
-# lint("scripts/summary_information.R")

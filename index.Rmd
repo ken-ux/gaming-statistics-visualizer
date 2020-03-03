@@ -52,6 +52,11 @@ The axes were also adjusted to remove outliers such as individual games with lon
 ## Chart 2: Peter
 Describe the purpose of each chart (e.g., "this chart was intended to show the relationship between..."), render each chart, and describe pertinent observations found in each chart
 
+```{r echo = FALSE}
+source("scripts/second_chart.R")
+get_second_chart(summary_data)
+```
+
 
 ## Chart 3: Ryan
 Describe the purpose of each chart (e.g., "this chart was intended to show the relationship between..."), render each chart, and describe pertinent observations found in each chart
