@@ -46,7 +46,7 @@ A scatter plot was used because:
 - Playtime and metacritic score are continuous values which can have large amounts of variability.
 - A non-linear regression could be plotted on top of points to show the general relationship between playtime vs. critic score.
 
-The axes were also adjusted to remove outliers such as individual games with long playtime or trend lines with wide confidence intervals. In this chart, we can see that **higher metacritic ratings are correlated with longer playtime**. This may inform developers that adding elements to a game which increases playtime through replayability or bonus content may be worthwhile during game development.
+The axes were also adjusted to remove outliers such as individual games with long playtime or trends with wide confidence intervals i.e. games with critic scores below 40. In this chart, we can see that **higher metacritic ratings are correlated with longer playtime**. This may inform developers that adding elements to a game which increases playtime through replayability or bonus content may be worthwhile during game development.
 
 
 ## Chart 2: Peter
