@@ -1,8 +1,6 @@
 # Imports
 library("dplyr")
-library("stringr")
 library("ggplot2")
-library("leaflet")
 
 get_second_chart <- function(df) {
   ggplot(data = df, aes(x = Genre, y = Total_Shipped)) +
