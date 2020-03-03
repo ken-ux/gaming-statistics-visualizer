@@ -60,4 +60,11 @@ get_second_chart(summary_data)
 Through this chart you can observe that for the most part, the middle 50% of titles between genres do not show many differences in terms of total shipped. However, certain genres, especially racing, have a larger range for their middle 50%. This suggests that those genres are perhaps more sure bets for success, or have consistent customers who shop specifically for those genres. Several other genres, like Role-Playing, Action, and Shooter games, have quite a few outliers, some with quite large numbers shipped. This suggests that those genres may be more likely to produce smash hits that get many shipped units, despite the averages for those genres being relatively low.
 
 ## Chart 3: Ryan
-Describe the purpose of each chart (e.g., "this chart was intended to show the relationship between..."), render each chart, and describe pertinent observations found in each chart
+This chart is intended to show the shifting focus of the game industry over time by linking the genre of a game with its release date. This can show which types of games the market is saturated in so that a developer's game does not get lost in the crowd. This chart can also provide insights for which direction the market is heading.
+
+```{r echo = FALSE}
+source("scripts/second_chart.R")
+get_second_chart(summary_data)
+```
+
+A stacked area chart excels in showing the proportion of games in each individual genre vs the entire market of games.
