@@ -63,7 +63,7 @@ Through this chart you can observe that for the most part, the middle 50% of tit
 This chart is intended to show the shifting focus of the game industry over time by linking the genre of a game with its release date. This can show which types of games the market is saturated in so that a developer's game does not get lost in the crowd. This chart can also provide insights for which direction the market is heading.
 
 ```{r echo = FALSE}
-source("scripts/second_chart.R")
+source("scripts/third_chart.R")
 get_second_chart(summary_data)
 ```
 
