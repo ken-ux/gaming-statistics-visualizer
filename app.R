@@ -1,7 +1,7 @@
 # Insert any libraries below
-library("dyplr")
+library("dplyr")
 library("shiny")
-library("ggplot")
+library("ggplot2")
 
 
 # Source UI and server from respective files
