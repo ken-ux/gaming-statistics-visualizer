@@ -8,13 +8,15 @@ summary_page <- tabPanel(
       tabsetPanel(
         tabPanel(
           "Scope",
-          textOutput(outputId = "summary_text")
+          htmlOutput(outputId = "summary_text")
         ),
         tabPanel(
-          "Major Questions"
+          "Major Questions",
+          htmlOutput(outputId = "major_questions")
         ),
         tabPanel(
-          "Dataset"
+          "Dataset",
+          htmlOutput(outputId = "data_info")
         )
       )
     )
