@@ -33,6 +33,11 @@ interactive_one <- tabPanel(
   hr(),
   fluidRow(
     column(4,
+      h4("How do Metacritic scores compare between game genres?"),
+      p("The boxplots above can be adjusted to fit the Metacritic
+        scores for a specific genre using the dropdown menus to the right!")
+    ),
+    column(4,
       selectInput(
         inputId = "genre_pick_one",
         label = "Genre One",
@@ -60,7 +65,8 @@ takeaways <- tabPanel(
   navlistPanel(
     "Navigation",
     tabPanel(
-      "Takeaway One" # Kenny
+      "Takeaway One", # Kenny
+      htmlOutput(outputId = "takeaway_one")
     ),
     tabPanel(
       "Takeaway Two" # Peter
