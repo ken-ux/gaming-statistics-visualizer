@@ -228,4 +228,5 @@ my_server <- function(input, output) {
          but for individual consoles does not follow this trend."
       )
     )
-})
+  })
+}
