@@ -38,7 +38,7 @@ my_server <- function(input, output) {
       tags$br(),
       tags$p("The major questions we intend to answer are as follows:"),
       tags$ol(
-        tags$li("First question"),
+        tags$li("How do Metacritic scores compare between game genres?"),
         tags$li("Second question"),
         tags$li("Third question")
       )
@@ -100,6 +100,20 @@ my_server <- function(input, output) {
       )
   })
 
+  output$takeaway_one <- renderUI({
+    tags$div(
+      tags$br(),
+      tags$br(),
+      tags$p("For our question ", tags$b("\"How do Metacritic scores compare between game genres?\""),
+        " you can refer back to our first interactive page. It allows users to compare between
+        many different genres and take note of the median score that is assigned from
+        Metacritic's aggregated reviews. This question is open-ended to allow users to make
+        their own conclusions for specific they're interested in! It also allows one to find
+        unique trends from hundreds of genre combinations. Overall, we saw that no genres had
+        abysmal scores, indicating that every genre will find a gamer or critic they resonate with!"
+      )
+    )
+  })
 
 
   # Peter
