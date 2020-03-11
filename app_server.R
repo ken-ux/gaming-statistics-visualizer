@@ -128,7 +128,6 @@ my_server <- function(input, output) {
   output$takeaway_one <- renderUI({
     tags$div(
       tags$br(),
-      tags$br(),
       tags$p(
         "For our question ",
         tags$b("\"How do Metacritic scores compare between game genres?\""),
@@ -168,7 +167,6 @@ my_server <- function(input, output) {
 
   output$takeaway_two <- renderUI({
     tags$div(
-      tags$br(),
       tags$br(),
       tags$p(
         "For our question ",
@@ -217,7 +215,6 @@ my_server <- function(input, output) {
   
   output$takeaway_three <- renderUI({
     tags$div(
-      tags$br(),
       tags$br(),
       tags$p(
         "For our question ",
