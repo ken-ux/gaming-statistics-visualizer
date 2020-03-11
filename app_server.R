@@ -1,6 +1,6 @@
 # Keep track of any libraries you use and add it to the list in app.R
 
-game_data <- read.csv("data/merged_game_data.csv", stringsAsFactors = FALSE)
+
 # Filter rows that contain empty values for metacritic score or genre.
 filtered_data <- game_data %>%
   select(
