@@ -24,7 +24,18 @@ summary_page <- tabPanel(
 )
 
 interactive_one <- tabPanel(
-  "Interactive Dataset One"
+  "Interactive Dataset One",
+  plotOutput(outputId = "first_chart"),
+  hr(),
+  fluidRow(
+    column(4,
+      selectInput(
+        inputId = "genre_pick",
+        label = "Genre",
+        choices = genre_choices
+      )
+    )
+  )
 )
 
 interactive_two <- tabPanel(
