@@ -27,8 +27,8 @@ interactive_one <- tabPanel(
   "Interactive Dataset One",
   splitLayout(
     cellWidths = c("50%", "50%"),
-    plotOutput(outputId = "first_chart"),
-    plotOutput(outputId = "comparison_chart")
+    plotlyOutput(outputId = "first_chart"),
+    plotlyOutput(outputId = "comparison_chart")
   ),
   hr(),
   fluidRow(
