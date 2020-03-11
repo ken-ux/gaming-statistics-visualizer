@@ -221,8 +221,11 @@ my_server <- function(input, output) {
         tags$b("\"How has different platforms' video game sales changed over 
          time?\""),"You can refer back to our third interactive page. It shows 
          a plot of platforms and how the sales of games for each of these have 
-         changed over time. Overall, game sales increased as time progresses
-         but for individual consoles does not follow this trend."
+         changed over time. Overall, game sales increase as time progresses
+         individual platforms do not follow this trend, PC being the 
+         main exception. Consoles, like the PS2, only last for so many years 
+         until the next generation is developed, thus causing their sales to 
+         decline eventually."
       )
     )
   })
