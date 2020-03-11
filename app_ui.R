@@ -2,7 +2,8 @@ summary_page <- tabPanel(
   p("Project Overview: ", em("Gaming")),
   sidebarLayout(
     sidebarPanel(
-      p("This website was developed thanks to Shiny and the authors: Kenny, Peter, and Ryan!")
+      p("This website was developed thanks to Shiny and the authors:
+         Kenny, Peter, and Ryan!")
     ),
     mainPanel(
       tabsetPanel(
@@ -32,12 +33,14 @@ interactive_one <- tabPanel(
   ),
   hr(),
   fluidRow(
-    column(4,
+    column(
+      4,
       h4("How do Metacritic scores compare between game genres?"),
       p("The boxplots above can be adjusted to fit the Metacritic
         scores for a specific genre using the dropdown menus to the right!")
     ),
-    column(4,
+    column(
+      4,
       selectInput(
         inputId = "genre_pick_one",
         label = "Genre One",
@@ -53,7 +56,26 @@ interactive_one <- tabPanel(
 )
 
 interactive_two <- tabPanel(
-  "Interactive Dataset Two"
+  "Interactive Dataset Two",
+  sidebarLayout(
+    sidebarPanel(
+      h4("How have video game sales changed over the years, and how do
+          different genres compare?"),
+      p("Sales is measured in total units shipped to better compare
+       differently priced games as well as across years. Change which
+        genres are displayed using the checkboxes below!"),
+      checkboxGroupInput(
+        inputId = "check_genre",
+        label = "Select Genres to Display",
+        choices = genre_choices,
+        selected = genre_choices,
+      )
+    ),
+    mainPanel(
+      plotlyOutput("second_chart")
+    ),
+    position = "left"
+  )
 )
 
 interactive_three <- tabPanel(
