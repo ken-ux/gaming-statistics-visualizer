@@ -60,12 +60,12 @@ my_server <- function(input, output) {
   # Kenny
   
   # Make boxplot for metacritic score vs. genre.
-  output$first_chart <- renderPlot({
+  output$first_chart <- renderPlotly({
     # Filter data for a specific genre choice.
     specific_genre <- filtered_data %>%
       filter(Genre == toString(input$genre_pick_one))
     
-    ggplot(data = specific_genre) +
+    test <- ggplot(data = specific_genre) +
       geom_boxplot(
         mapping = aes(x = Genre, y = Metacritic)
       ) +
@@ -73,19 +73,16 @@ my_server <- function(input, output) {
         title = paste0("Metacritic Score for ", toString(input$genre_pick_one), " Games"),
         y = "Metacritic Score"
       ) +
-      scale_y_continuous(limits = c(0, 100)) +
-      geom_label(
-        aes(x = Genre, y = median(Metacritic), label = paste0("Median:", median(Metacritic))),
-        size = 6
-      )
+      scale_y_continuous(limits = c(0, 100))
+    ggplotly(test)
   })
   
-  output$comparison_chart <- renderPlot({
+  output$comparison_chart <- renderPlotly({
     # Filter data for a specific genre choice.
     specific_genre <- filtered_data %>%
       filter(Genre == toString(input$genre_pick_two))
     
-    ggplot(data = specific_genre) +
+    plot <- ggplot(data = specific_genre) +
       geom_boxplot(
         mapping = aes(x = Genre, y = Metacritic)
       ) +
@@ -93,11 +90,8 @@ my_server <- function(input, output) {
         title = paste0("Metacritic Score for ", toString(input$genre_pick_two), " Games"),
         y = "Metacritic Score"
       ) +
-      scale_y_continuous(limits = c(0, 100)) +
-      geom_label(
-        aes(x = Genre, y = median(Metacritic), label = paste0("Median: ", median(Metacritic))),
-        size = 6
-      )
+      scale_y_continuous(limits = c(0, 100))
+    ggplotly(plot)
   })
 
   output$takeaway_one <- renderUI({
