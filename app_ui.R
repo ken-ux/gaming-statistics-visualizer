@@ -91,7 +91,8 @@ takeaways <- tabPanel(
       htmlOutput(outputId = "takeaway_one")
     ),
     tabPanel(
-      "Takeaway Two" # Peter
+      "Takeaway Two", # Peter
+      htmlOutput(outputId = "takeaway_two")
     ),
     tabPanel(
       "Takeaway Three" # Ryan

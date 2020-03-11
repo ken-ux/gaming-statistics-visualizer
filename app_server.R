@@ -44,7 +44,8 @@ my_server <- function(input, output) {
       tags$p("The major questions we intend to answer are as follows:"),
       tags$ol(
         tags$li("How do Metacritic scores compare between game genres?"),
-        tags$li("Second question"),
+        tags$li("How have video game sales changed over the years, and how do
+          different genres compare?"),
         tags$li("Third question")
       )
     )
@@ -90,12 +91,11 @@ my_server <- function(input, output) {
       scale_y_continuous(limits = c(0, 100))
     ggplotly(test)
   })
-  
+
   output$comparison_chart <- renderPlotly({
     # Filter data for a specific genre choice.
     specific_genre <- filtered_data %>%
       filter(Genre == toString(input$genre_pick_two))
-    
     plot <- ggplot(data = specific_genre) +
       geom_boxplot(
         mapping = aes(x = Genre, y = Metacritic)
@@ -130,7 +130,6 @@ my_server <- function(input, output) {
     )
   })
 
-
   # Peter
   output$second_chart <- renderPlotly({
     genre_filtered <- filter(game_data, Genre %in% input$check_genre)
@@ -153,7 +152,32 @@ my_server <- function(input, output) {
     ggplotly(my_plot, tooltip = "text")
   })
 
-
+  output$takeaway_two <- renderUI({
+    tags$div(
+      tags$br(),
+      tags$br(),
+      tags$p(
+        "For our question ",
+        tags$b("\"How have video game sales changed over the years, and how do
+          different genres compare?\""), "You can refer back to our second
+         interactive page. You can see a plot of all kinds of different games
+         organized by genre, and see how sales have changed over the years,
+         overall as well as between genres. It is plain to see that over the
+         many years since video games were first introduced their sales have
+         been increasing. Between different genres things look pretty similar,
+         aside from certain genres, such as ", tags$b("Simulation"), " or ",
+        tags$b("Visual Novel"), " which appear to have much lower than average
+         units shipped. Looking at points which are more of outliers, they tend
+         to be mostly ", tags$b("Platformer, Role-Playing, "), "or ",
+        tags$b("Racing"), " games. However, these games may share other factors
+         which we did not consider in this analysis, such as the same publisher,
+         which may be more of a factor than genre. It is difficult to conclude
+         whether the genre is the primary factor or not. Ignoring the outliers,
+         those genres seem to do well in general, so perhaps it isn't a
+         coincidence."
+      )
+    )
+  })
 
   # Ryan
 }
