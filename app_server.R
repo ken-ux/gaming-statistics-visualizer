@@ -43,9 +43,36 @@ my_server <- function(input, output) {
   })
 
   # Kenny
+  # Filter rows that contain empty values for metacritic
+  # score or genre
+  filtered_data <- game_data %>%
+    select(
+      Metacritic = metacritic,
+      Genre
+    ) %>%
+    na.omit()
+  
+  # Provide a list of genres as choices for user selection
+  genre_choices <- filtered_data %>%
+    group_by(Genre) %>%
+    summarize(count = n()) %>%
+    pull(Genre)
+  
+  # Make boxplot for metacritic score vs. genre
   output$first_chart <- renderPlot({
+    # Filter data for a specific genre choice
+    specific_genre <- filtered_data %>%
+      filter(Genre == toString(input$genre_pick))
     
-    
+    ggplot(data = specific_genre) +
+      geom_boxplot(
+        mapping = aes(x = Genre, y = Metacritic)
+      ) +
+      labs(
+        title = paste0("Metacritic Score for ", "game-type", " games"),
+        y = "Metacritic Score"
+      )
+    # adjust axis to start at 0 and end at 100
     
     
   })
