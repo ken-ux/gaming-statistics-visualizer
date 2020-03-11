@@ -2,7 +2,7 @@ summary_page <- tabPanel(
   p("Project Overview: ", em("Gaming")),
   sidebarLayout(
     sidebarPanel(
-      # Add image here later
+      p("This website was developed thanks to Shiny and the authors: Kenny, Peter, and Ryan!")
     ),
     mainPanel(
       tabsetPanel(
