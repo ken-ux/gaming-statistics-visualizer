@@ -25,7 +25,7 @@ summary_page <- tabPanel(
 )
 
 interactive_one <- tabPanel(
-  "Interactive Dataset One",
+  "Metacritic Score Between Genres",
   splitLayout(
     cellWidths = c("50%", "50%"),
     plotlyOutput(outputId = "first_chart"),
@@ -56,7 +56,7 @@ interactive_one <- tabPanel(
 )
 
 interactive_two <- tabPanel(
-  "Interactive Dataset Two",
+  "Shipped Units Over the Years",
   sidebarLayout(
     sidebarPanel(
       h4("How have video game sales changed over the years, and how do
@@ -87,11 +87,11 @@ takeaways <- tabPanel(
   navlistPanel(
     "Navigation",
     tabPanel(
-      "Takeaway One", # Kenny
+      "Metacritic Score Between Genres Takeaways", # Kenny
       htmlOutput(outputId = "takeaway_one")
     ),
     tabPanel(
-      "Takeaway Two", # Peter
+      "Shipped Units Over The Years Takeaways", # Peter
       htmlOutput(outputId = "takeaway_two")
     ),
     tabPanel(
