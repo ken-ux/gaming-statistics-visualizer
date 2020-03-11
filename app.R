@@ -2,6 +2,7 @@
 library("dplyr")
 library("shiny")
 library("ggplot2")
+library("stringr")
 
 # Import .csv as dataframe
 game_data <- read.csv("data/merged_game_data.csv", stringsAsFactors = FALSE)
