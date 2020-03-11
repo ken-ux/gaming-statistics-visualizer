@@ -79,7 +79,25 @@ interactive_two <- tabPanel(
 )
 
 interactive_three <- tabPanel(
-  "Interactive Dataset Three"
+  "Shipped Units Over the Years",
+  sidebarLayout(
+    sidebarPanel(
+      h4("How has different consoles' video game sales changed over time?"),
+      p("Sales is measured in total units shipped to better compare
+       differently priced games as well as across years. Change which
+        platforms are displayed using the checkboxes below!"),
+      checkboxGroupInput(
+        inputId = "check_platform",
+        label = "Select Platforms to Display",
+        choices = platform_choices,
+        selected = platform_choices,
+      )
+    ),
+    mainPanel(
+      plotlyOutput("third_chart")
+    ),
+    position = "left"
+  )
 )
 
 takeaways <- tabPanel(
@@ -95,7 +113,8 @@ takeaways <- tabPanel(
       htmlOutput(outputId = "takeaway_two")
     ),
     tabPanel(
-      "Takeaway Three" # Ryan
+      "Shipped Units by Platform Takeaways", # Ryan
+      htmlOutput(outputId = "takeaway_three")
     )
   )
 )

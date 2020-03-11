@@ -15,15 +15,29 @@ genre_choices <- filtered_data %>%
   summarize(count = n()) %>%
   pull(Genre)
 
+#Filter rows that contain empty values for platform or year
+filtered_data_plat <- game_data %>%
+  select(
+    Platform = Platform,
+    Year
+  ) %>%
+  na.omit()
+
+#Provide a list of platforms as choices for user selection
+platform_choices <- filtered_data_plat %>%
+  group_by(Platform) %>%
+  summarize(count = n()) %>%
+  pull(Platform)
+
 my_server <- function(input, output) {
   output$summary_text <- renderUI({
     tags$div(
       tags$br(),
       tags$p(
         "We were interested in exploring ", tags$b("gaming "),
-        "as a domain because itventures to a realm of technology
+        "as a domain because it ventures to a realm of technology
          that has gained exceptional tractionand popularity over
-        time. Complex and interesting advancements in components
+         time. Complex and interesting advancements in components
          like ", tags$em("gaming platforms, companies, and
          technological innovations"), " have produced entirely new
          genres, virtual reality, mobile games, and more! Our group
@@ -46,7 +60,7 @@ my_server <- function(input, output) {
         tags$li("How do Metacritic scores compare between game genres?"),
         tags$li("How have video game sales changed over the years, and how do
           different genres compare?"),
-        tags$li("Third question")
+        tags$li("How has different platforms' video game sales changed over time?")
       )
     )
   })
@@ -159,7 +173,7 @@ my_server <- function(input, output) {
       tags$p(
         "For our question ",
         tags$b("\"How have video game sales changed over the years, and how do
-          different genres compare?\""), "You can refer back to our second
+         different genres compare?\""), "You can refer back to our second
          interactive page. You can see a plot of all kinds of different games
          organized by genre, and see how sales have changed over the years,
          overall as well as between genres. It is plain to see that over the
@@ -180,4 +194,38 @@ my_server <- function(input, output) {
   })
 
   # Ryan
-}
+  output$third_chart <- renderPlotly({
+    platform_filtered <- filter(game_data, Platform %in% input$check_platform)
+    my_plot <- ggplot(data = platform_filtered) +
+      geom_point(mapping = aes(
+        x = Year, y = Total_Shipped, color = Platform,
+        text = paste0(
+          Name, "<br>", "Year Released: ", Year, "<br>",
+          "Shipped: ", Total_Shipped, " Million"
+        )
+      )) +
+      labs(
+        title = "Year of Release vs. Total Games Shipped",
+        x = "Year of Release",
+        y = "Total Shipped (millions)",
+        color = "Platform"
+      ) +
+      scale_x_continuous(limits = c(1980, max(game_data$Year, na.rm = TRUE))) +
+      scale_y_continuous(limits = c(0, 50))
+    ggplotly(my_plot, tooltip = "text")
+  })
+  
+  output$takeaway_three <- renderUI({
+    tags$div(
+      tags$br(),
+      tags$br(),
+      tags$p(
+        "For our question ",
+        tags$b("\"How has different platforms' video game sales changed over 
+         time?\""),"You can refer back to our third interactive page. It shows 
+         a plot of platforms and how the sales of games for each of these have 
+         changed over time. Overall, game sales increased as time progresses
+         but for individual consoles does not follow this trend."
+      )
+    )
+})
