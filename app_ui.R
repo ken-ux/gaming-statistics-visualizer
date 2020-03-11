@@ -79,7 +79,7 @@ interactive_two <- tabPanel(
 )
 
 interactive_three <- tabPanel(
-  "Shipped Units Over the Years",
+  "Shipped Units by Platform",
   sidebarLayout(
     sidebarPanel(
       h4("How has different consoles' video game sales changed over time?"),
@@ -106,14 +106,17 @@ takeaways <- tabPanel(
     "Navigation",
     tabPanel(
       "Metacritic Score Between Genres Takeaways", # Kenny
+      h4("How do Metacritic scores compare between game genres?"),
       htmlOutput(outputId = "takeaway_one")
     ),
     tabPanel(
       "Shipped Units Over The Years Takeaways", # Peter
+      h4("How have video game sales changed over the years, and how do different genres compare?"),
       htmlOutput(outputId = "takeaway_two")
     ),
     tabPanel(
       "Shipped Units by Platform Takeaways", # Ryan
+      h4("How has different platforms' video game sales changed over time?"),
       htmlOutput(outputId = "takeaway_three")
     )
   )
