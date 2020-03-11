@@ -43,7 +43,12 @@ my_server <- function(input, output) {
   })
 
   # Kenny
-
+  output$first_chart <- renderPlot({
+    
+    
+    
+    
+  })
 
 
 
