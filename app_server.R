@@ -1,4 +1,19 @@
 # Keep track of any libraries you use and add it to the list in app.R
+
+# Filter rows that contain empty values for metacritic score or genre.
+filtered_data <- game_data %>%
+  select(
+    Metacritic = metacritic,
+    Genre
+  ) %>%
+  na.omit()
+
+# Provide a list of genres as choices for user selection.
+genre_choices <- filtered_data %>%
+  group_by(Genre) %>%
+  summarize(count = n()) %>%
+  pull(Genre)
+
 my_server <- function(input, output) {
   output$summary_text <- renderUI({
     tags$div(
@@ -43,38 +58,46 @@ my_server <- function(input, output) {
   })
 
   # Kenny
-  # Filter rows that contain empty values for metacritic
-  # score or genre
-  filtered_data <- game_data %>%
-    select(
-      Metacritic = metacritic,
-      Genre
-    ) %>%
-    na.omit()
   
-  # Provide a list of genres as choices for user selection
-  genre_choices <- filtered_data %>%
-    group_by(Genre) %>%
-    summarize(count = n()) %>%
-    pull(Genre)
-  
-  # Make boxplot for metacritic score vs. genre
+  # Make boxplot for metacritic score vs. genre.
   output$first_chart <- renderPlot({
-    # Filter data for a specific genre choice
+    # Filter data for a specific genre choice.
     specific_genre <- filtered_data %>%
-      filter(Genre == toString(input$genre_pick))
+      filter(Genre == toString(input$genre_pick_one))
     
     ggplot(data = specific_genre) +
       geom_boxplot(
         mapping = aes(x = Genre, y = Metacritic)
       ) +
       labs(
-        title = paste0("Metacritic Score for ", "game-type", " games"),
+        title = paste0("Metacritic Score for ", toString(input$genre_pick_one), " Games"),
         y = "Metacritic Score"
+      ) +
+      scale_y_continuous(limits = c(0, 100)) +
+      geom_label(
+        aes(x = Genre, y = median(Metacritic), label = paste0("Median:", median(Metacritic))),
+        size = 6
       )
-    # adjust axis to start at 0 and end at 100
+  })
+  
+  output$comparison_chart <- renderPlot({
+    # Filter data for a specific genre choice.
+    specific_genre <- filtered_data %>%
+      filter(Genre == toString(input$genre_pick_two))
     
-    
+    ggplot(data = specific_genre) +
+      geom_boxplot(
+        mapping = aes(x = Genre, y = Metacritic)
+      ) +
+      labs(
+        title = paste0("Metacritic Score for ", toString(input$genre_pick_two), " Games"),
+        y = "Metacritic Score"
+      ) +
+      scale_y_continuous(limits = c(0, 100)) +
+      geom_label(
+        aes(x = Genre, y = median(Metacritic), label = paste0("Median: ", median(Metacritic))),
+        size = 6
+      )
   })
 
 

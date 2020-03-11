@@ -25,13 +25,22 @@ summary_page <- tabPanel(
 
 interactive_one <- tabPanel(
   "Interactive Dataset One",
-  plotOutput(outputId = "first_chart"),
+  splitLayout(
+    cellWidths = c("50%", "50%"),
+    plotOutput(outputId = "first_chart"),
+    plotOutput(outputId = "comparison_chart")
+  ),
   hr(),
   fluidRow(
     column(4,
       selectInput(
-        inputId = "genre_pick",
-        label = "Genre",
+        inputId = "genre_pick_one",
+        label = "Genre One",
+        choices = genre_choices
+      ),
+      selectInput(
+        inputId = "genre_pick_two",
+        label = "Genre Two",
         choices = genre_choices
       )
     )
