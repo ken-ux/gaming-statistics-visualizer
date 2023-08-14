@@ -4,7 +4,7 @@ Authors: Kenny Nguyen, Peter Miyoshi, Ryan McGhee
 
 This is our final project for our INFO 201 course at the University of Washington. We decided on a domain of interest (gaming) and extracted meaningful insights from datasets pertaining to it, namely through visualizations and data science fundamentals.
 
-Our end product was a collaborative data-driven website deployed in Shiny and coded in R. It can be found [here](ken-ux.shinyapps.io/final-project-ken-ux/).
+Our end product was a collaborative data-driven website deployed in Shiny and coded in R. It can be found [here](https://ken-ux.shinyapps.io/final-project-ken-ux/).
 
 Below is a write-up that details our process through questions and answers.
 
