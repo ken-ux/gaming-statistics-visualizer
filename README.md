@@ -1,8 +1,10 @@
-# Final Project
+# Project Brief
 
 Authors: Kenny Nguyen, Peter Miyoshi, Ryan McGhee
 
-Assignment: Project Brainstorm
+This is our final project for our INFO 201 course at the University of Washington. We decided on a domain of interest (gaming) and extracted meaningful insights from datasets pertaining to it, namely through visualizations and data science fundamentals.
+
+Below is a write-up that details our process through questions and answers.
 
 # Part 1: Domain of Interest
 The domain we're interested in is **gaming, particularly video games**.
